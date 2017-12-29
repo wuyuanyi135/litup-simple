@@ -21,7 +21,8 @@ export default class MenuBuilder {
       template = this.buildDefaultTemplate();
     }
 
-    const menu = Menu.buildFromTemplate(template);
+    // const menu = Menu.buildFromTemplate(template);
+    const menu = null;
     Menu.setApplicationMenu(menu);
 
     return menu;
