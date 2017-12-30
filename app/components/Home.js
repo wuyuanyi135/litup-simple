@@ -1,4 +1,5 @@
 // @flow
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from 'material-ui/Button';
@@ -18,7 +19,7 @@ const styles = {
   },
 };
 
-class Index extends React.Component {
+class Home extends React.Component {
   state = {
     open: false,
   };
@@ -63,8 +64,8 @@ class Index extends React.Component {
   }
 }
 
-Index.propTypes = {
+Home.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Index);
+export default withStyles(styles)(Home);

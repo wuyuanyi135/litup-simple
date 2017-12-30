@@ -1,9 +1,13 @@
-import React, {Component} from 'react';
+// @flow
+
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import AppBar from 'material-ui/AppBar';
 import Tabs, { Tab } from 'material-ui/Tabs';
 import Typography from 'material-ui/Typography';
+
+import { switchTabAction } from '../actions/NavigationTabsActions';
 
 function TabContainer(props) {
   return (
@@ -30,7 +34,8 @@ class NavigationTabs extends Component {
   };
 
   handleChange = (event, value) => {
-    this.setState({ value });
+    // this.setState({ value });
+    switchTabAction(value);
   };
 
   render() {
