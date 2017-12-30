@@ -7,8 +7,6 @@ import AppBar from 'material-ui/AppBar';
 import Tabs, { Tab } from 'material-ui/Tabs';
 import Typography from 'material-ui/Typography';
 
-import { switchTabAction } from '../actions/NavigationTabsActions';
-
 function TabContainer(props) {
   return (
     <Typography component="div" style={{ padding: 0 }}>
@@ -21,33 +19,35 @@ TabContainer.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-const styles = theme => ({
-  root: {
-    flexGrow: 1,
-    backgroundColor: theme.palette.background.paper,
-  },
-});
+type Props = {
+  classes: object
+
+}
 
 class NavigationTabs extends Component {
+  constructor() {
+    super();
+    this.handleChange = this.handleChange.bind(this);
+  }
+
   state = {
     value: 0,
   };
 
-  handleChange = (event, value) => {
+  handleChange(event, value) {
     // this.setState({ value });
-    switchTabAction(value);
-  };
+
+    this.props.switchTabAction(value ? value : 0);
+  }
 
   render() {
-    const { classes } = this.props;
-    const { value } = this.state;
+    const { classes, page } = this.props;
 
     return (
       <div className={classes.root}>
         <AppBar position="static">
-          <Tabs value={value} onChange={this.handleChange}>
-            <Tab label="Record Explorer" />
-            <Tab label="Manage" />
+          <Tabs value={page} onChange={this.handleChange}>
+            <Tab label="Explore" />
             <Tab label="Export" />
           </Tabs>
         </AppBar>
@@ -60,8 +60,11 @@ class NavigationTabs extends Component {
   }
 }
 
-NavigationTabs.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
+const styles = theme => ({
+  root: {
+    flexGrow: 1,
+    backgroundColor: theme.palette.background.paper,
+  },
+});
 
 export default withStyles(styles)(NavigationTabs);

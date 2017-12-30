@@ -1,11 +1,11 @@
 // @flow
 import React, { Component } from 'react';
-import NavigationTabs from '../components/NavigationTabs';
+import NavigationTabsContainer from './NavigationTabsContainer';
 
 export default class HomePage extends Component {
   render() {
     return (
-      <NavigationTabs />
+      <NavigationTabsContainer />
     );
   }
 }

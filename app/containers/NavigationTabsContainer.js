@@ -6,9 +6,10 @@ import NavigationTabs from '../components/NavigationTabs';
 import * as navigationTabsActions from '../actions/NavigationTabsActions';
 import { type navigationTabsStateType } from '../reducers/NavigationTabsReducer';
 
-function mapStateToProps(state: navigationTabsStateType) {
+type _navigationTabsStateType = { NavigationTabsReducer: navigationTabsStateType };
+function mapStateToProps(state: _navigationTabsStateType) {
   return {
-    page: state.page
+    page: state.NavigationTabsReducer.page
   };
 }
 
