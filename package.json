@@ -97,6 +97,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-transform-async-to-generator": "^7.0.0-beta.36",
     "babel-core": "^6.24.1",
     "babel-eslint": "^7.2.3",
     "babel-jest": "^20.0.3",
@@ -105,6 +106,7 @@
     "babel-plugin-dev-expression": "^0.2.1",
     "babel-plugin-dynamic-import-webpack": "^1.0.1",
     "babel-plugin-flow-runtime": "^0.11.1",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-es2015-classes": "^6.24.1",
     "babel-preset-env": "^1.5.1",
@@ -173,6 +175,7 @@
     "history": "^4.6.3",
     "material-ui": "^1.0.0-beta.25",
     "material-ui-icons": "^1.0.0-beta.17",
+    "nedb": "^1.8.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-hot-loader": "3.0.0-beta.6",
